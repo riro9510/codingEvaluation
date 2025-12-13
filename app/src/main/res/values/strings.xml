@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CodingEvaluation</string>
+    <string name="flag_description">Flag of the country</string>
 </resources>

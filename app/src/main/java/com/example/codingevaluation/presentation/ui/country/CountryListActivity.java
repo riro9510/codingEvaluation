@@ -39,4 +39,5 @@ public class CountryListActivity extends AppCompatActivity{
 
         countryViewModel.loadCountries(this);
     }
+
 }
