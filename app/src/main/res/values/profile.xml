@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_picture">https://github.com/riro9510/riro9510/blob/3b6c7201d6535b59c05c65a184f33f9005490a9b/profile.jpeg</string>
+    <string name="profile_name">Ricardo Ramos Olivares</string>
+    <string name="profile_title">Full Stack Developer</string>
+    <string name="profile_contact">riro9510@gmail.com | +52 922-1565872</string>
+    <string name="profile_links">linkedin.com/in/ricardo-ramos-olivares-201402217 | github.com/riro9510</string>
+
+    <string name="profile_summary">Led mobile &amp; web development using Flutter, React Native, Node.js, and Python. Delivered production-grade apps with 99.9% uptime, integrated 15+ internal and third-party APIs, and reduced critical bugs by 70% via proactive debugging. Proven in cross-functional teams and customer-facing support.</string>
+
+    <string name="profile_experience_title">Work Experience</string>
+    <string name="profile_job_title">Mobile / Full Stack Developer</string>
+    <string name="profile_company">Ingeaa de México — Estado de México, México</string>
+    <string name="profile_job_period">Oct. 2022 – Present</string>
+    <string name="profile_job_details">• Led mobile development team to build and maintain multi-modular apps using Flutter and React Native for Android/iOS\n
+• Directed migration of legacy project to React Native platform\n
+• Resolved critical production bugs via backend fixes and proactive monitoring\n
+• Collaborated with product teams to integrate third-party APIs and boost UX performance\n
+• Delivered technical support, minimizing downtime and resolving customer issues swiftly\n
+• Partnered with cross-functional teams to design technical solutions meeting business needs\n
+• Managed app deployment to App Store and Google Play\n
+• Debugged and optimized app performance via log analysis and technical documentation</string>
+
+    <string name="profile_education_title">Education</string>
+    <string name="profile_degree">Bachelor of Science in Software Development</string>
+    <string name="profile_university">Brigham Young University Idaho — Rexburg, Idaho, U.S.A</string>
+    <string name="profile_education_period">Dec. 2023 – August 2026</string>
+    <string name="profile_education_details">• Built data-driven applications in Node.js, Python, and JavaScript during coursework\n
+• Applied industry best practices in design patterns, architecture, and SDLC\n
+• Mastered full-stack development through hands-on client- and server-side projects</string>
+
+    <string name="profile_skills_title">Key Skills</string>
+    <string name="profile_skills">Flutter (Dart) • React Native (TypeScript) • React.js • Node.js • Express • RESTful APIs • Firebase • Git • MongoDB • Android Studio • Problem-Solving • Teamwork • Fluent in Spanish and English</string>
+
+</resources>

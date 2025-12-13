@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.codingevaluation"
-    compileSdk = 36
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.codingevaluation"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -61,5 +61,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.4.0")
     implementation("androidx.lifecycle:lifecycle-livedata:2.4.0")
     implementation("androidx.lifecycle:lifecycle-runtime:2.4.0")
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }

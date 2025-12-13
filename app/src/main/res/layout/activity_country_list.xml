@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- RecyclerView para mostrar la lista de países -->
+
     <RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

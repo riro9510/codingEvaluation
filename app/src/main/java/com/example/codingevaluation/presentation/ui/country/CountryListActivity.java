@@ -19,7 +19,7 @@ public class CountryListActivity extends AppCompatActivity{
     private RecyclerView recyclerView;
     private CountryViewModel countryViewModel;
 
-    @override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_list);
