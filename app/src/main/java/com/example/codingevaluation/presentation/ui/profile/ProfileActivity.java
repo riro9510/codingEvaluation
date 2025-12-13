@@ -1,13 +1,17 @@
 package com.example.codingevaluation.presentation.ui.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.codingevaluation.R;
+import com.example.codingevaluation.presentation.ui.country.CountryListActivity;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -49,5 +53,11 @@ public class ProfileActivity extends AppCompatActivity {
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .error(R.drawable.ic_launcher_background)
                 .into(ivProfile);
+
+        Button btnGoToCountries = findViewById(R.id.btn_go_to_countries);
+        btnGoToCountries.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, CountryListActivity.class);
+            startActivity(intent);
+        });
     }
 }

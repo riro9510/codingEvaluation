@@ -5,6 +5,7 @@ import com.example.codingevaluation.R;
 import com.example.codingevaluation.presentation.viewmodels.CountryViewModel;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -29,12 +30,13 @@ public class CountryListActivity extends AppCompatActivity{
 
         countryViewModel = new ViewModelProvider(this).get(CountryViewModel.class);
 
-        countryViewModel.getCountries().observe(this, new Observer<List<String>>() {
-            @Override
-            public void onChanged(List<String> countries) {
-                CountryAdapter adapter = new CountryAdapter(countries);
-                recyclerView.setAdapter(adapter);
-            }
+        countryViewModel.getCountries().observe(this, countries -> {
+            CountryAdapter adapter = new CountryAdapter(countries, countryName -> {
+                Intent intent = new Intent(CountryListActivity.this, CountryDetailActivity.class);
+                intent.putExtra("country_name", countryName);
+                startActivity(intent);
+            });
+            recyclerView.setAdapter(adapter);
         });
 
         countryViewModel.loadCountries(this);

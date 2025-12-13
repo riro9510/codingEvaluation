@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="profile_picture">https://github.com/riro9510/riro9510/blob/3b6c7201d6535b59c05c65a184f33f9005490a9b/profile.jpeg</string>
+    <string name="profile_picture">https://raw.githubusercontent.com/riro9510/riro9510/refs/heads/main/profile.jpeg</string>
     <string name="profile_name">Ricardo Ramos Olivares</string>
     <string name="profile_title">Full Stack Developer</string>
     <string name="profile_contact">riro9510@gmail.com | +52 922-1565872</string>
