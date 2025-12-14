@@ -22,7 +22,7 @@ public class CountryNetwork {
             BufferedReader reader = null;
             try {
                 String encodedName = countryName.replace(" ", "%20");
-                URL url = new URL("https://restcountries.com/v3.1/name/" + encodedName + "?fullText=true");
+                URL url = new URL("https://restcountries.com/v3.1/name/" + encodedName);
                 conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
                 conn.setConnectTimeout(10000);
@@ -41,7 +41,6 @@ public class CountryNetwork {
                     response.append(line);
                 }
 
-                // Parsing encapsulado
                 CountryDetail country = parseCountryResponse(response.toString());
                 callback.onSuccess(country);
 

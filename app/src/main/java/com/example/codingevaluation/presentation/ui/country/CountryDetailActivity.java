@@ -72,27 +72,22 @@ public class CountryDetailActivity extends AppCompatActivity {
     }
 
     private void bindCountryToUI(CountryDetail country) {
-        // Nombre grande
         tvCountryName.setText(country.getName());
 
-        // Datos con formato bonito
         tvCapital.setText("Capital: " + country.getCapital());
 
-        // Formato con comas para población
         NumberFormat formatter = NumberFormat.getInstance(Locale.getDefault());
         tvPopulation.setText("Population: " + formatter.format(country.getPopulation()));
 
-        // Área con separador de miles y sin decimales si es entero
         tvArea.setText("Area: " + formatter.format(country.getArea()) + " km²");
 
         tvRegion.setText("Region: " + country.getRegion());
         tvSubregion.setText("Sub-region: " + country.getSubregion());
 
-        // Bandera con Glide (con placeholder y error)
         Glide.with(this)
                 .load(country.getFlagUrl())
-                .placeholder(R.drawable.ic_launcher_foreground)  // mientras carga
-                .error(R.drawable.ic_launcher_background)        // si falla
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_background)
                 .into(ivFlag);
     }
 }

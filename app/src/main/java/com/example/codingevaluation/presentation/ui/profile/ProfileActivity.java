@@ -20,7 +20,6 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        // Views
         ImageView ivProfile = findViewById(R.id.iv_profile_photo);
         TextView tvName = findViewById(R.id.tv_name);
         TextView tvTitle = findViewById(R.id.tv_title);

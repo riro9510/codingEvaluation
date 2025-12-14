@@ -9,7 +9,6 @@ public class CountryDetail {
     private final String subregion;
     private final String flagUrl;
 
-    // Constructor principal (usado en parsing)
     public CountryDetail(String name, String capital, long population, double area,
                          String region, String subregion, String flagUrl) {
         this.name = name;
@@ -21,7 +20,6 @@ public class CountryDetail {
         this.flagUrl = flagUrl;
     }
 
-    // Getters (solo lectura → inmutable)
     public String getName() { return name; }
     public String getCapital() { return capital; }
     public long getPopulation() { return population; }
