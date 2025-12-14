@@ -1,0 +1,77 @@
+name: CI/CD - Test & Release
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Run unit tests
+        id: test
+        run: ./gradlew testDebugUnitTest --continue
+
+      - name: Build debug APK
+        if: success()
+        run: ./gradlew assembleDebug
+
+      - name: Upload APK artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+
+  release-on-success:
+    needs: test-and-build
+    if: success() && github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge dev into main
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git checkout main
+          git merge origin/dev --ff-only
+          git push origin main
+
+      - name: Create Release Tag v1.0.0
+        run: |
+          git tag -a v1.0.0 -m "First stable release - Midtronics evaluation completed"
+          git push origin v1.0.0
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v1.0.0
+          release_name: Midtronics Evaluation v1.0.0
+          body: |
+            Evaluation completed successfully.
+            - Profile screen with real photo and scrollable CV
+            - Full country list from provided XML
+            - Country detail with live API + flag bonus
+            - Clean architecture, testing and CI/CD
+          draft: false
+          prerelease: false
